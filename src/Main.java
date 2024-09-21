@@ -13,24 +13,24 @@ public class Main {
 
         Scanner console = new Scanner(System.in);
         int j = console.nextInt();
-        String text = "";
-        String result = "";
+        String text;
+        String result;
 
         switch (j) {
             case 1:
                 text = FileManager.readFile();
                 result = Cipher.encrypt(text);
-                FileManager.writeFile(result,"CipherOutput.txt");
+                FileManager.writeFile(result);
                 break;
             case 2:
                 text = FileManager.readFile();
                 result = Cipher.decrypt(text);
-                FileManager.writeFile(result,"EncipherOutput.txt");
+                FileManager.writeFile(result);
                 break;
             case 3:
                 text = FileManager.readFile();
                 result = BruteForce.bruteForce(text);
-                FileManager.writeFile(result,"BruteForceOutput.txt");
+                FileManager.writeFile(result);
                 break;
             case 4:
                 System.out.println("ВЫХОД");
