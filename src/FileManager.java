@@ -37,7 +37,6 @@ public class FileManager {
                 System.out.println("Файл создан \nДанные внесены");
             } catch (IOException e) {
                 System.out.println("Ошибка при создании файла");
-                e.printStackTrace();
             }
         }
 
@@ -47,7 +46,6 @@ public class FileManager {
             writer.close();
         } catch (IOException e) {
             System.out.println("Ошибка при записи в файл");
-            e.printStackTrace();
         }
     }
 }
