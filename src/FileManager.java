@@ -12,9 +12,15 @@ public class FileManager {
         Scanner console = new Scanner(System.in);
         String location = console.nextLine();
         Path path = Paths.get(location);
-        byte[] bytes = Files.readAllBytes(path);
-        return new String(bytes, StandardCharsets.UTF_8);
+        try {
+            byte[] bytes = Files.readAllBytes(path);
+            return new String(bytes, StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            System.out.println("Ошибка чтения файла. Проверьте, что файл существует.");
+            return null;
+        }
     }
+
     public static void writeFile(String content) {
         System.out.println("В какой папке создать файл? Укажите путь к папке:");
         Scanner console = new Scanner(System.in);

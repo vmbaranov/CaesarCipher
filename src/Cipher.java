@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Cipher {
@@ -7,7 +8,13 @@ public class Cipher {
     public static String encrypt(String text) {
         System.out.println("Введите ключ шифрования:");
         Scanner console = new Scanner(System.in);
-        int key = console.nextInt();
+        int key;
+        if (console.hasNextInt())
+            key = console.nextInt();
+        else {
+            System.out.println("Ключ должен быть числом!");
+            return null;
+        }
 
         String cipheredText = "";
         cipheredText = encrypter(text, key);

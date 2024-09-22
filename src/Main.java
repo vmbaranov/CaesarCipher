@@ -19,16 +19,26 @@ public class Main {
         switch (j) {
             case 1:
                 text = FileManager.readFile();
+                if (text == null)
+                    break;
                 result = Cipher.encrypt(text);
+                if (result == null)
+                    break;
                 FileManager.writeFile(result);
                 break;
             case 2:
                 text = FileManager.readFile();
+                if (text == null)
+                    break;
                 result = Cipher.decrypt(text);
+                if (result == null)
+                    break;
                 FileManager.writeFile(result);
                 break;
             case 3:
                 text = FileManager.readFile();
+                if (text == null)
+                    break;
                 result = BruteForce.bruteForce(text);
                 FileManager.writeFile(result);
                 break;
